@@ -8,7 +8,7 @@
 <meta name="author" content="Jahan Zaib">
 <meta name="theme-color" content="#0b0820">
 <meta name="color-scheme" content="dark">
-<link rel="canonical" href="https://wahidzeb.github.io/">
+<link rel="canonical" href="https://zaibgames.com/">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="512x512" href="/img/icon-512.png">
 <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
@@ -16,15 +16,15 @@
 <meta property="og:site_name" content="Games by Zaib">
 <meta property="og:title" content="Games by Zaib — Free Arcade Games">
 <meta property="og:description" content="Motorbike combat, paper planes, zombie hordes and arcade football. Tap and play instantly in your browser.">
-<meta property="og:url" content="https://wahidzeb.github.io/">
-<meta property="og:image" content="https://wahidzeb.github.io/img/og.jpg">
+<meta property="og:url" content="https://zaibgames.com/">
+<meta property="og:image" content="https://zaibgames.com/img/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Games by Zaib — screenshots of Moto Mayhem, Sky Glide, Horde Breaker and Goal Frenzy">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Games by Zaib — Free Arcade Games">
 <meta name="twitter:description" content="Tap and play instantly in your browser. No downloads.">
-<meta name="twitter:image" content="https://wahidzeb.github.io/img/og.jpg">
+<meta name="twitter:image" content="https://zaibgames.com/img/og.jpg">
 <style>
 @font-face{font-family:"Zaib Display";src:url(data:font/woff;base64,__FONT__) format("woff");font-display:swap}
 :root{
@@ -112,6 +112,16 @@ h1{font-family:var(--display);font-weight:400;font-size:clamp(46px,13vw,104px);l
 footer{text-align:center;color:rgba(183,176,216,.7);font-size:13px;margin-top:26px;padding-bottom:6px}
 footer b{color:#e9d5ff}
 
+.info{margin:34px auto 0;max-width:900px}
+.info>h2{font-family:var(--display);font-weight:400;font-size:clamp(28px,6vw,40px);text-align:center;margin-bottom:6px}
+.info>p.intro{color:var(--mut);text-align:center;max-width:60ch;margin:0 auto 18px}
+.ginfo{border-radius:18px;padding:16px 18px;margin-top:14px;background:rgba(255,255,255,.045);border:1px solid var(--line)}
+.ginfo h3{font-family:var(--display);font-weight:400;font-size:24px;letter-spacing:.01em}
+.ginfo p{color:#d6d0f0;font-size:15px;margin:6px 0}
+.ginfo .lnk{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;font-weight:700}
+.ginfo .lnk a{color:#c4b5fd;text-decoration:none}.ginfo .lnk a:hover{color:#67e8f9;text-decoration:underline}
+footer nav{display:flex;flex-wrap:wrap;justify-content:center;gap:4px 14px;margin-bottom:8px}
+footer nav a{color:#c4b5fd;text-decoration:none}footer nav a:hover{text-decoration:underline}
 @media (min-width:700px){.wrap{padding-top:48px}header{padding-bottom:36px}.games{gap:24px}}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.card{opacity:1;transform:none}}
 </style>
@@ -135,12 +145,52 @@ footer b{color:#e9d5ff}
   <!-- Ad banner slot: intentionally empty. Drop an ad unit inside #ad-slot later. -->
   <aside class="ad-slot" id="ad-slot" aria-hidden="true"></aside>
 
-  <footer>Made with ♥ by <b>Jahan Zaib</b> · <span id="yr"></span></footer>
+  <section class="info" aria-labelledby="info-h">
+    <h2 id="info-h">About the games</h2>
+    <p class="intro">Every game here is original, free and runs right in your browser on phones, tablets and computers. No downloads, no sign-up. Your progress is saved on your device.</p>
+  <article class="ginfo" id="moto-mayhem-info">
+    <h3>Moto Mayhem</h3>
+    <p>Moto Mayhem is a road-rash style motorbike racing game for phones and desktop browsers. Every race puts you on a winding highway against seven rival bikers, and the quickest way past them is often a well-timed punch or kick.</p>
+    <p><strong>How to play:</strong> Throttle is automatic. Steer to stay on the road and dodge traffic and roadside objects. Ride alongside a rival and attack toward their side. Kicks reach further and hit harder but are slower than punches.</p>
+    <p class="lnk"><a href="/moto-mayhem/">▶ Play Moto Mayhem</a><a href="/games/moto-mayhem/">How to play, controls &amp; features →</a></p>
+  </article>
+  <article class="ginfo" id="sky-glide-info">
+    <h3>Sky Glide</h3>
+    <p>Sky Glide is a one-touch flying game with a sketchbook look. You pilot a paper plane: hold to lift, release to glide, and thread your way past pencils, birds, cranes, storm clouds and even black holes.</p>
+    <p><strong>How to play:</strong> Hold anywhere on the screen to lift the plane; release to glide down. Avoid obstacles. Passing close to one without touching it gives a near-miss bonus, and near misses in a row build a combo multiplier up to x8.</p>
+    <p class="lnk"><a href="/sky-glide/">▶ Play Sky Glide</a><a href="/games/sky-glide/">How to play, controls &amp; features →</a></p>
+  </article>
+  <article class="ginfo" id="horde-breaker-info">
+    <h3>Horde Breaker</h3>
+    <p>Horde Breaker is a twin-stick style zombie shooter built for touch screens. Auto-fire is on by default: you focus on moving and dodging while your gun locks onto the most dangerous zombie.</p>
+    <p><strong>How to play:</strong> Move with the left joystick (or WASD). Your weapon aims and fires automatically. Keep moving. Brutes telegraph a charge, spitters fire acid, bloaters explode and crawlers lunge.</p>
+    <p class="lnk"><a href="/horde-breaker/">▶ Play Horde Breaker</a><a href="/games/horde-breaker/">How to play, controls &amp; features →</a></p>
+  </article>
+  <article class="ginfo" id="goal-frenzy-info">
+    <h3>Goal Frenzy</h3>
+    <p>Goal Frenzy is an arcade football game with a 3D-perspective stadium, curling shots and over-the-top power shots. Matches are short and fast, and they play well with a thumb on a phone or on a keyboard.</p>
+    <p><strong>How to play:</strong> Move with the floating joystick on the left side of the screen. Tap SHOOT to shoot; hold it for more power and swipe across the button to curl the ball.</p>
+    <p class="lnk"><a href="/goal-frenzy/">▶ Play Goal Frenzy</a><a href="/games/goal-frenzy/">How to play, controls &amp; features →</a></p>
+  </article>
+  <article class="ginfo" id="shuttle-smash-info">
+    <h3>Shuttle Smash</h3>
+    <p>Shuttle Smash is a badminton game for phones with a portrait 3D-perspective court and realistic shuttlecock physics, including drag and tumbling feathers. Your player moves to the shuttle automatically, so you only need to think about where and how hard to hit.</p>
+    <p><strong>How to play:</strong> Swipe to hit: the swipe direction sets your aim and its length and speed set the power. A short swipe plays a drop or net shot, a long swipe plays a clear or lob, and a long swipe on a high shuttle is a jump smash. Tap for an automatic shot.</p>
+    <p class="lnk"><a href="/shuttle-smash/">▶ Play Shuttle Smash</a><a href="/games/shuttle-smash/">How to play, controls &amp; features →</a></p>
+  </article>
+  <article class="ginfo" id="kedimz-adventure-info">
+    <h3>Kedimz Adventure</h3>
+    <p>Kedimz Adventure is a mobile-first side-scrolling platformer. Kedimz the cat sets out to bring back the Golden Bells across five worlds of four levels each, and every world ends with a boss fight.</p>
+    <p><strong>How to play:</strong> Move left and right. Keep holding a direction and Kedimz speeds up into a run. Press JUMP to jump; hold it for a higher jump. Stomp on enemies or swipe them with your paw.</p>
+    <p class="lnk"><a href="/kedimz-adventure/">▶ Play Kedimz Adventure</a><a href="/games/kedimz-adventure/">How to play, controls &amp; features →</a></p>
+  </article>
+  </section>
+
+  <footer><nav aria-label="Site"><a href="/games/">Game guides</a><a href="/about/">About</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy Policy</a><a href="/terms/">Terms of Use</a></nav>Made with ♥ by <b>Jahan Zaib</b> · <span id="yr"></span></footer>
 </main>
 
 <noscript><p style="text-align:center;color:#b7b0d8;padding:20px">
-  <a href="/moto-mayhem/">Moto Mayhem</a> · <a href="/sky-glide/">Sky Glide</a> ·
-  <a href="/horde-breaker/">Horde Breaker</a> · <a href="/goal-frenzy/">Goal Frenzy</a></p></noscript>
+  <a href="/moto-mayhem/">Moto Mayhem</a> · <a href="/sky-glide/">Sky Glide</a> · <a href="/horde-breaker/">Horde Breaker</a> · <a href="/goal-frenzy/">Goal Frenzy</a> · <a href="/shuttle-smash/">Shuttle Smash</a> · <a href="/kedimz-adventure/">Kedimz Adventure</a></p></noscript>
 
 <script>
 /* ============================================================
@@ -149,11 +199,11 @@ footer b{color:#e9d5ff}
    color (genre tag colour). Omit url to show a "Coming soon" card.
    ============================================================ */
 const GAMES = [
-  { name: "Moto Mayhem",   desc: "Motorbike combat racer — punch, kick and boost to first place.", genre: "Racing",   url: "https://wahidzeb.github.io/moto-mayhem/",   img: "img/moto-mayhem.webp",   color: "#f97316" },
-  { name: "Sky Glide",     desc: "Fly a paper plane over the city, dodge danger and grab coins.",  genre: "Casual",   url: "https://wahidzeb.github.io/sky-glide/",     img: "img/sky-glide.webp",     color: "#ec4899" },
-  { name: "Horde Breaker", desc: "Zombie survival shooter — outlast endless undead hordes.",       genre: "Shooter",  url: "https://wahidzeb.github.io/horde-breaker/", img: "img/horde-breaker.webp", color: "#ef4444" },
-  { name: "Goal Frenzy",   desc: "Fast arcade football — sprint, pass and power-shoot to win.",   genre: "Sports",   url: "https://wahidzeb.github.io/goal-frenzy/",   img: "img/goal-frenzy.webp",   color: "#22c55e" },
-  { name: "Shuttle Smash", desc: "3D badminton — swipe to smash, power shots, World Tour and 2-player mode.", genre: "Sports",   url: "https://wahidzeb.github.io/shuttle-smash/", img: "img/shuttle-smash.webp", color: "#0ea5e9" },
+  { name: "Moto Mayhem",   desc: "Motorbike combat racer — punch, kick and boost to first place.", genre: "Racing",   url: "/moto-mayhem/",   img: "img/moto-mayhem.webp",   color: "#f97316" },
+  { name: "Sky Glide",     desc: "Fly a paper plane over the city, dodge danger and grab coins.",  genre: "Casual",   url: "/sky-glide/",     img: "img/sky-glide.webp",     color: "#ec4899" },
+  { name: "Horde Breaker", desc: "Zombie survival shooter — outlast endless undead hordes.",       genre: "Shooter",  url: "/horde-breaker/", img: "img/horde-breaker.webp", color: "#ef4444" },
+  { name: "Goal Frenzy",   desc: "Fast arcade football — sprint, pass and power-shoot to win.",   genre: "Sports",   url: "/goal-frenzy/",   img: "img/goal-frenzy.webp",   color: "#22c55e" },
+  { name: "Shuttle Smash", desc: "3D badminton — swipe to smash, power shots, World Tour and 2-player mode.", genre: "Sports",   url: "/shuttle-smash/", img: "img/shuttle-smash.webp", color: "#0ea5e9" },
   { name: "Kedimz Adventure", desc: "Cat platformer — 5 worlds, 20 levels, bosses, power-ups and a hat shop.", genre: "Platformer", url: "/kedimz-adventure/", img: "img/kedimz-adventure.webp", color: "#f59e0b" },
 ];
 
