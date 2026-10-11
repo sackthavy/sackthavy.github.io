@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Games by Zaib — Free Arcade Games in Your Browser</title>
+<meta name="description" content="Play free arcade games by Zaib instantly in your browser — Moto Mayhem, Sky Glide, Horde Breaker, Goal Frenzy and more. No downloads, made for phones.">
+<meta name="author" content="Jahan Zaib">
+<meta name="theme-color" content="#0b0820">
+<meta name="color-scheme" content="dark">
+<link rel="canonical" href="https://wahidzeb.github.io/">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="512x512" href="/img/icon-512.png">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Games by Zaib">
+<meta property="og:title" content="Games by Zaib — Free Arcade Games">
+<meta property="og:description" content="Motorbike combat, paper planes, zombie hordes and arcade football. Tap and play instantly in your browser.">
+<meta property="og:url" content="https://wahidzeb.github.io/">
+<meta property="og:image" content="https://wahidzeb.github.io/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Games by Zaib — screenshots of Moto Mayhem, Sky Glide, Horde Breaker and Goal Frenzy">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Games by Zaib — Free Arcade Games">
+<meta name="twitter:description" content="Tap and play instantly in your browser. No downloads.">
+<meta name="twitter:image" content="https://wahidzeb.github.io/img/og.jpg">
+<style>
+@font-face{font-family:"Zaib Display";src:url(data:font/woff;base64,__FONT__) format("woff");font-display:swap}
+:root{
+  --bg:#0b0820;--card:rgba(255,255,255,.06);--line:rgba(255,255,255,.12);
+  --txt:#f4f1ff;--mut:#b7b0d8;--a1:#a855f7;--a2:#22d3ee;--a3:#f472b6;--ok:#34d399;
+  --display:"Zaib Display","Arial Rounded MT Bold","Trebuchet MS",system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{min-height:100vh;min-height:100dvh;background:var(--bg);color:var(--txt);
+  font:16px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  overflow-x:hidden;-webkit-tap-highlight-color:transparent}
+a{color:inherit}
+
+/* ---------- animated background ---------- */
+.bg{position:fixed;inset:0;z-index:-1;overflow:hidden;
+  background:radial-gradient(120% 80% at 50% -10%,#24124d 0%,#0b0820 55%,#06040f 100%)}
+.blob{position:absolute;width:70vmax;height:70vmax;border-radius:50%;filter:blur(70px);opacity:.38;will-change:transform}
+.b1{background:var(--a1);top:-30vmax;left:-25vmax;animation:drift1 22s ease-in-out infinite alternate}
+.b2{background:var(--a2);bottom:-35vmax;right:-30vmax;opacity:.28;animation:drift2 26s ease-in-out infinite alternate}
+.b3{background:var(--a3);top:30%;left:40%;width:45vmax;height:45vmax;opacity:.18;animation:drift3 30s ease-in-out infinite alternate}
+@keyframes drift1{to{transform:translate(18vmax,14vmax) scale(1.15)}}
+@keyframes drift2{to{transform:translate(-16vmax,-18vmax) scale(1.1)}}
+@keyframes drift3{to{transform:translate(-30vmax,10vmax) scale(.85)}}
+.grid-floor{position:absolute;left:-50%;right:-50%;bottom:-10%;height:55%;
+  background-image:linear-gradient(rgba(168,85,247,.35) 1px,transparent 1px),linear-gradient(90deg,rgba(34,211,238,.28) 1px,transparent 1px);
+  background-size:48px 48px;transform:perspective(420px) rotateX(62deg);transform-origin:50% 0;
+  -webkit-mask-image:linear-gradient(to bottom,transparent,#000 35%);mask-image:linear-gradient(to bottom,transparent,#000 35%);
+  animation:floor 3.2s linear infinite;opacity:.45}
+@keyframes floor{to{background-position:0 48px,0 0}}
+#stars{position:absolute;inset:0;width:100%;height:100%}
+
+/* ---------- layout ---------- */
+.wrap{width:100%;max-width:1180px;margin:0 auto;padding:max(28px,env(safe-area-inset-top)) max(16px,env(safe-area-inset-right)) max(28px,env(safe-area-inset-bottom)) max(16px,env(safe-area-inset-left))}
+header{text-align:center;padding:18px 0 22px}
+.badge{display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border-radius:999px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  color:#d9ccff;background:rgba(168,85,247,.14);border:1px solid rgba(168,85,247,.35);backdrop-filter:blur(8px)}
+.badge i{width:8px;height:8px;border-radius:50%;background:var(--ok);box-shadow:0 0 10px var(--ok);animation:pulse 1.6s ease-in-out infinite}
+@keyframes pulse{50%{opacity:.35}}
+h1{font-family:var(--display);font-weight:400;font-size:clamp(46px,13vw,104px);line-height:.95;margin:14px 0 10px;letter-spacing:.01em;
+  background:linear-gradient(100deg,#fff 0%,#e9d5ff 30%,#67e8f9 50%,#f9a8d4 70%,#fff 100%);background-size:250% 100%;
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  filter:drop-shadow(0 4px 0 rgba(76,29,149,.9)) drop-shadow(0 0 26px rgba(168,85,247,.55));animation:shine 7s linear infinite}
+@keyframes shine{to{background-position:-250% 0}}
+.tag{color:var(--mut);font-size:clamp(15px,4vw,18px);max-width:34ch;margin:0 auto}
+
+.games{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));margin-top:10px}
+.card{position:relative;display:flex;flex-direction:column;border-radius:22px;overflow:hidden;
+  background:linear-gradient(180deg,rgba(255,255,255,.09),rgba(255,255,255,.03));border:1px solid var(--line);
+  box-shadow:0 10px 30px rgba(0,0,0,.45),inset 0 1px 0 rgba(255,255,255,.12);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  transform:translateY(14px);opacity:0;animation:rise .6s cubic-bezier(.2,.8,.2,1) forwards;animation-delay:calc(var(--i)*90ms);
+  transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+@keyframes rise{to{transform:none;opacity:1}}
+.card:not(.soon):hover{transform:translateY(-4px);border-color:rgba(168,85,247,.6);box-shadow:0 16px 40px rgba(0,0,0,.5),0 0 0 1px rgba(168,85,247,.25),0 0 40px rgba(168,85,247,.25)}
+.thumb{position:relative;display:block;aspect-ratio:16/10;overflow:hidden;background:#140f2e}
+.thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease}
+.card:not(.soon):hover .thumb img{transform:scale(1.06)}
+.thumb::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(11,8,32,.85));pointer-events:none}
+.thumb::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:linear-gradient(115deg,transparent 35%,rgba(255,255,255,.22) 50%,transparent 65%);transform:translateX(-100%);transition:transform .8s ease}
+.card:not(.soon):hover .thumb::before{transform:translateX(100%)}
+.genre{position:absolute;z-index:2;top:12px;left:12px;padding:5px 10px;border-radius:999px;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;
+  color:#fff;background:var(--gc,rgba(168,85,247,.85));box-shadow:0 4px 14px rgba(0,0,0,.35)}
+.body{display:flex;flex-direction:column;gap:6px;padding:14px 16px 16px;flex:1}
+.name{font-family:var(--display);font-weight:400;font-size:28px;line-height:1.05;letter-spacing:.01em}
+.desc{color:var(--mut);font-size:15px;flex:1}
+.play{margin-top:10px;display:flex;align-items:center;justify-content:center;gap:10px;min-height:56px;border-radius:16px;text-decoration:none;
+  font-family:var(--display);font-size:24px;letter-spacing:.06em;color:#fff;
+  background:linear-gradient(180deg,#c084fc 0%,#9333ea 55%,#7e22ce 100%);
+  box-shadow:0 6px 0 #4c1d95,0 10px 24px rgba(147,51,234,.45),inset 0 2px 0 rgba(255,255,255,.35);
+  text-shadow:0 2px 0 rgba(59,7,100,.6);transition:transform .12s ease,box-shadow .12s ease,filter .2s}
+.play svg{width:22px;height:22px;fill:currentColor;filter:drop-shadow(0 2px 0 rgba(59,7,100,.6))}
+.play:hover{filter:brightness(1.1)}
+.play:active{transform:translateY(5px);box-shadow:0 1px 0 #4c1d95,0 4px 12px rgba(147,51,234,.4),inset 0 2px 0 rgba(255,255,255,.3)}
+.play:focus-visible,.thumb:focus-visible{outline:3px solid var(--a2);outline-offset:3px}
+.soon .thumb{display:grid;place-items:center;background:
+  radial-gradient(circle at 30% 30%,rgba(52,211,153,.35),transparent 55%),radial-gradient(circle at 75% 75%,rgba(34,211,238,.3),transparent 55%),#10172b}
+.soon .thumb svg{width:44%;max-width:150px;opacity:.9;animation:bob 3s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-8px) rotate(-6deg)}}
+.soon .play{background:rgba(255,255,255,.07);color:var(--mut);box-shadow:inset 0 0 0 2px rgba(255,255,255,.14);text-shadow:none;cursor:default;font-size:20px}
+
+.ad-slot{margin:26px auto 0;max-width:728px;min-height:90px;border-radius:14px;border:1px dashed rgba(255,255,255,.14);
+  background:rgba(255,255,255,.025);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.22);
+  font-size:11px;letter-spacing:.2em;text-transform:uppercase}
+footer{text-align:center;color:rgba(183,176,216,.7);font-size:13px;margin-top:26px;padding-bottom:6px}
+footer b{color:#e9d5ff}
+
+@media (min-width:700px){.wrap{padding-top:48px}header{padding-bottom:36px}.games{gap:24px}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.card{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="bg" aria-hidden="true">
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+  <canvas id="stars"></canvas>
+  <div class="grid-floor"></div>
+</div>
+
+<main class="wrap">
+  <header>
+    <span class="badge"><i></i>Free · No downloads</span>
+    <h1>Games by Zaib</h1>
+    <p class="tag">Arcade games made for your phone. Tap a game and play instantly.</p>
+  </header>
+
+  <section class="games" id="games" aria-label="Games"></section>
+
+  <!-- Ad banner slot: intentionally empty. Drop an ad unit inside #ad-slot later. -->
+  <aside class="ad-slot" id="ad-slot" aria-hidden="true"></aside>
+
+  <footer>Made with ♥ by <b>Jahan Zaib</b> · <span id="yr"></span></footer>
+</main>
+
+<noscript><p style="text-align:center;color:#b7b0d8;padding:20px">
+  <a href="/moto-mayhem/">Moto Mayhem</a> · <a href="/sky-glide/">Sky Glide</a> ·
+  <a href="/horde-breaker/">Horde Breaker</a> · <a href="/goal-frenzy/">Goal Frenzy</a></p></noscript>
+
+<script>
+/* ============================================================
+   ADD NEW GAMES HERE.
+   Each entry: name, desc (one line), genre, url, img (under img/),
+   color (genre tag colour). Omit url to show a "Coming soon" card.
+   ============================================================ */
+const GAMES = [
+  { name: "Moto Mayhem",   desc: "Motorbike combat racer — punch, kick and boost to first place.", genre: "Racing",   url: "https://wahidzeb.github.io/moto-mayhem/",   img: "img/moto-mayhem.webp",   color: "#f97316" },
+  { name: "Sky Glide",     desc: "Fly a paper plane over the city, dodge danger and grab coins.",  genre: "Casual",   url: "https://wahidzeb.github.io/sky-glide/",     img: "img/sky-glide.webp",     color: "#ec4899" },
+  { name: "Horde Breaker", desc: "Zombie survival shooter — outlast endless undead hordes.",       genre: "Shooter",  url: "https://wahidzeb.github.io/horde-breaker/", img: "img/horde-breaker.webp", color: "#ef4444" },
+  { name: "Goal Frenzy",   desc: "Fast arcade football — sprint, pass and power-shoot to win.",   genre: "Sports",   url: "https://wahidzeb.github.io/goal-frenzy/",   img: "img/goal-frenzy.webp",   color: "#22c55e" },
+  { name: "Badminton",     desc: "Smash, drop and rally your way to the championship.",          genre: "Sports",   url: null,                                        img: null,                     color: "#0ea5e9" },
+];
+
+const PLAY_ICON = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15a1 1 0 0 0 1.53.85l12-7.5a1 1 0 0 0 0-1.7l-12-7.5A1 1 0 0 0 7 4.5z"/></svg>';
+const SHUTTLE = '<svg viewBox="0 0 100 100" aria-hidden="true"><g fill="none" stroke="#e0fdfa" stroke-width="4" stroke-linejoin="round"><path d="M50 62 22 14h56z" fill="rgba(255,255,255,.15)"/><path d="M50 62 36 14M50 62l14-48M50 62V14"/></g><circle cx="50" cy="74" r="14" fill="#34d399"/><path d="M36 70h28" stroke="#065f46" stroke-width="4"/></svg>';
+const esc = s => String(s).replace(/[&<>"']/g, c => ({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;" }[c]));
+
+document.getElementById("games").innerHTML = GAMES.map((g, i) => {
+  const soon = !g.url;
+  const thumb = soon
+    ? `<div class="thumb">${SHUTTLE}<span class="genre" style="--gc:${g.color}">${esc(g.genre)}</span></div>`
+    : `<a class="thumb" href="${esc(g.url)}" tabindex="-1" aria-hidden="true"><img src="${esc(g.img)}" alt="" width="600" height="375" loading="${i < 2 ? "eager" : "lazy"}" decoding="async"><span class="genre" style="--gc:${g.color}">${esc(g.genre)}</span></a>`;
+  const btn = soon
+    ? `<span class="play" aria-disabled="true">COMING SOON</span>`
+    : `<a class="play" href="${esc(g.url)}" aria-label="Play ${esc(g.name)}">${PLAY_ICON}PLAY</a>`;
+  return `<article class="card${soon ? " soon" : ""}" style="--i:${i}">${thumb}<div class="body"><h2 class="name">${esc(g.name)}</h2><p class="desc">${esc(g.desc)}</p>${btn}</div></article>`;
+}).join("");
+document.getElementById("yr").textContent = new Date().getFullYear();
+
+/* twinkling starfield */
+(() => {
+  const c = document.getElementById("stars"), x = c.getContext("2d");
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  let w, h, dpr, stars = [];
+  function size() {
+    dpr = Math.min(devicePixelRatio || 1, 2);
+    w = c.width = innerWidth * dpr; h = c.height = innerHeight * dpr;
+    const n = Math.round(Math.min(140, innerWidth * innerHeight / 7000));
+    stars = Array.from({ length: n }, () => ({ x: Math.random() * w, y: Math.random() * h, r: (Math.random() * 1.4 + .3) * dpr, s: Math.random() * .25 + .05, p: Math.random() * 6.28 }));
+  }
+  function frame(t) {
+    x.clearRect(0, 0, w, h);
+    for (const s of stars) {
+      s.y -= s.s * dpr; if (s.y < -4) { s.y = h + 4; s.x = Math.random() * w; }
+      x.globalAlpha = .35 + .65 * Math.abs(Math.sin(t / 900 + s.p));
+      x.fillStyle = "#e9e3ff"; x.beginPath(); x.arc(s.x, s.y, s.r, 0, 6.283); x.fill();
+    }
+    if (!reduce) requestAnimationFrame(frame);
+  }
+  addEventListener("resize", size); size(); requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>
