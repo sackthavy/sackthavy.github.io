@@ -8,7 +8,7 @@ Home / launcher page for Jahan Zaib's browser games — live at **https://wahidz
 | Sky Glide | Paper plane flying | https://wahidzeb.github.io/sky-glide/ |
 | Horde Breaker | Zombie survival shooter | https://wahidzeb.github.io/horde-breaker/ |
 | Goal Frenzy | Arcade football | https://wahidzeb.github.io/goal-frenzy/ |
-| Badminton | Sports | Coming soon |
+| Shuttle Smash | Badminton (1P / 2P) | https://wahidzeb.github.io/shuttle-smash/ |
 
 Each game lives in its own repo (project site); this repo is only the root user site.
 
