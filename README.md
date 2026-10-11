@@ -10,7 +10,6 @@ Home / launcher page for Jahan Zaib's browser games — live at **https://wahidz
 | Goal Frenzy | Arcade football | https://wahidzeb.github.io/goal-frenzy/ |
 | Shuttle Smash | Badminton (1P / 2P) | https://wahidzeb.github.io/shuttle-smash/ |
 | Kedimz Adventure | Platformer | https://zaibgames.com/kedimz-adventure/ |
-| Kedimz Mario | Platformer | https://zaibgames.com/kedimz-mario/ |
 
 Each game lives in its own repo (project site); this repo is only the root user site.
 
