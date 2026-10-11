@@ -1,250 +1,152 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Games by Zaib — Free Arcade Games in Your Browser</title>
-<meta name="description" content="Play free arcade games by Zaib instantly in your browser — Moto Mayhem, Sky Glide, Horde Breaker, Goal Frenzy and more. No downloads, made for phones.">
-<meta name="author" content="Jahan Zaib">
-<meta name="theme-color" content="#0b0820">
-<meta name="color-scheme" content="dark">
-<link rel="canonical" href="https://zaibgames.com/">
-<link rel="icon" href="/favicon.ico" sizes="any">
-<link rel="icon" type="image/png" sizes="512x512" href="/img/icon-512.png">
-<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>injoffice - AI-First Office Suite for Documents, Spreadsheets, Presentations & PDFs</title>
+<meta name="description" content="injoffice is a free, open-source office app with AI-powered editing for docs, spreadsheets, presentations, and PDFs. Works on desktop and browser. Download for Windows today.">
+<meta name="keywords" content="ai,ai-agent,ai-agents,artificial-intelligence,desktop-app,document-editor,docx,excel,genoffice-alternative,libreoffice-alternative,local-first,microsoft-office-alternative,office-suite,offline-first,pdf,pdf-editor,powerpoint,pptx,spreadsheet,xlsx">
+<meta name="author" content="injoffice Team">
+<meta property="og:title" content="injoffice - AI-First Office Suite for Documents, Spreadsheets, Presentations & PDFs">
+<meta property="og:description" content="Free, open-source office app with AI features. Edit docs, spreadsheets, presentations, and PDFs on desktop or in your browser. Download now.">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="Games by Zaib">
-<meta property="og:title" content="Games by Zaib — Free Arcade Games">
-<meta property="og:description" content="Motorbike combat, paper planes, zombie hordes and arcade football. Tap and play instantly in your browser.">
-<meta property="og:url" content="https://zaibgames.com/">
-<meta property="og:image" content="https://zaibgames.com/img/og.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Games by Zaib — screenshots of Moto Mayhem, Sky Glide, Horde Breaker and Goal Frenzy">
+<meta property="og:url" content="https://github.com/sackthavy/injoffice/releases">
+<meta property="og:image" content="https://via.placeholder.com/1200x630.png?text=injoffice+AI+Office+Suite">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Games by Zaib — Free Arcade Games">
-<meta name="twitter:description" content="Tap and play instantly in your browser. No downloads.">
-<meta name="twitter:image" content="https://zaibgames.com/img/og.jpg">
-<style>
-@font-face{font-family:"Zaib Display";src:url(data:font/woff;base64,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) format("woff");font-display:swap}
-:root{
-  --bg:#0b0820;--card:rgba(255,255,255,.06);--line:rgba(255,255,255,.12);
-  --txt:#f4f1ff;--mut:#b7b0d8;--a1:#a855f7;--a2:#22d3ee;--a3:#f472b6;--ok:#34d399;
-  --display:"Zaib Display","Arial Rounded MT Bold","Trebuchet MS",system-ui,sans-serif;
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html{-webkit-text-size-adjust:100%}
-body{min-height:100vh;min-height:100dvh;background:var(--bg);color:var(--txt);
-  font:16px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-  overflow-x:hidden;-webkit-tap-highlight-color:transparent}
-a{color:inherit}
-
-/* ---------- animated background ---------- */
-.bg{position:fixed;inset:0;z-index:-1;overflow:hidden;
-  background:radial-gradient(120% 80% at 50% -10%,#24124d 0%,#0b0820 55%,#06040f 100%)}
-.blob{position:absolute;width:70vmax;height:70vmax;border-radius:50%;filter:blur(70px);opacity:.38;will-change:transform}
-.b1{background:var(--a1);top:-30vmax;left:-25vmax;animation:drift1 22s ease-in-out infinite alternate}
-.b2{background:var(--a2);bottom:-35vmax;right:-30vmax;opacity:.28;animation:drift2 26s ease-in-out infinite alternate}
-.b3{background:var(--a3);top:30%;left:40%;width:45vmax;height:45vmax;opacity:.18;animation:drift3 30s ease-in-out infinite alternate}
-@keyframes drift1{to{transform:translate(18vmax,14vmax) scale(1.15)}}
-@keyframes drift2{to{transform:translate(-16vmax,-18vmax) scale(1.1)}}
-@keyframes drift3{to{transform:translate(-30vmax,10vmax) scale(.85)}}
-.grid-floor{position:absolute;left:-50%;right:-50%;bottom:-10%;height:55%;
-  background-image:linear-gradient(rgba(168,85,247,.35) 1px,transparent 1px),linear-gradient(90deg,rgba(34,211,238,.28) 1px,transparent 1px);
-  background-size:48px 48px;transform:perspective(420px) rotateX(62deg);transform-origin:50% 0;
-  -webkit-mask-image:linear-gradient(to bottom,transparent,#000 35%);mask-image:linear-gradient(to bottom,transparent,#000 35%);
-  animation:floor 3.2s linear infinite;opacity:.45}
-@keyframes floor{to{background-position:0 48px,0 0}}
-#stars{position:absolute;inset:0;width:100%;height:100%}
-
-/* ---------- layout ---------- */
-.wrap{width:100%;max-width:1180px;margin:0 auto;padding:max(28px,env(safe-area-inset-top)) max(16px,env(safe-area-inset-right)) max(28px,env(safe-area-inset-bottom)) max(16px,env(safe-area-inset-left))}
-header{text-align:center;padding:18px 0 22px}
-.badge{display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border-radius:999px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
-  color:#d9ccff;background:rgba(168,85,247,.14);border:1px solid rgba(168,85,247,.35);backdrop-filter:blur(8px)}
-.badge i{width:8px;height:8px;border-radius:50%;background:var(--ok);box-shadow:0 0 10px var(--ok);animation:pulse 1.6s ease-in-out infinite}
-@keyframes pulse{50%{opacity:.35}}
-h1{font-family:var(--display);font-weight:400;font-size:clamp(46px,13vw,104px);line-height:.95;margin:14px 0 10px;letter-spacing:.01em;
-  background:linear-gradient(100deg,#fff 0%,#e9d5ff 30%,#67e8f9 50%,#f9a8d4 70%,#fff 100%);background-size:250% 100%;
-  -webkit-background-clip:text;background-clip:text;color:transparent;
-  filter:drop-shadow(0 4px 0 rgba(76,29,149,.9)) drop-shadow(0 0 26px rgba(168,85,247,.55));animation:shine 7s linear infinite}
-@keyframes shine{to{background-position:-250% 0}}
-.tag{color:var(--mut);font-size:clamp(15px,4vw,18px);max-width:34ch;margin:0 auto}
-
-.games{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));margin-top:10px}
-.card{position:relative;display:flex;flex-direction:column;border-radius:22px;overflow:hidden;
-  background:linear-gradient(180deg,rgba(255,255,255,.09),rgba(255,255,255,.03));border:1px solid var(--line);
-  box-shadow:0 10px 30px rgba(0,0,0,.45),inset 0 1px 0 rgba(255,255,255,.12);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
-  transform:translateY(14px);opacity:0;animation:rise .6s cubic-bezier(.2,.8,.2,1) forwards;animation-delay:calc(var(--i)*90ms);
-  transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
-@keyframes rise{to{transform:none;opacity:1}}
-.card:not(.soon):hover{transform:translateY(-4px);border-color:rgba(168,85,247,.6);box-shadow:0 16px 40px rgba(0,0,0,.5),0 0 0 1px rgba(168,85,247,.25),0 0 40px rgba(168,85,247,.25)}
-.thumb{position:relative;display:block;aspect-ratio:16/10;overflow:hidden;background:#140f2e}
-.thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease}
-.card:not(.soon):hover .thumb img{transform:scale(1.06)}
-.thumb::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(11,8,32,.85));pointer-events:none}
-.thumb::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
-  background:linear-gradient(115deg,transparent 35%,rgba(255,255,255,.22) 50%,transparent 65%);transform:translateX(-100%);transition:transform .8s ease}
-.card:not(.soon):hover .thumb::before{transform:translateX(100%)}
-.genre{position:absolute;z-index:2;top:12px;left:12px;padding:5px 10px;border-radius:999px;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;
-  color:#fff;background:var(--gc,rgba(168,85,247,.85));box-shadow:0 4px 14px rgba(0,0,0,.35)}
-.body{display:flex;flex-direction:column;gap:6px;padding:14px 16px 16px;flex:1}
-.name{font-family:var(--display);font-weight:400;font-size:28px;line-height:1.05;letter-spacing:.01em}
-.desc{color:var(--mut);font-size:15px;flex:1}
-.play{margin-top:10px;display:flex;align-items:center;justify-content:center;gap:10px;min-height:56px;border-radius:16px;text-decoration:none;
-  font-family:var(--display);font-size:24px;letter-spacing:.06em;color:#fff;
-  background:linear-gradient(180deg,#c084fc 0%,#9333ea 55%,#7e22ce 100%);
-  box-shadow:0 6px 0 #4c1d95,0 10px 24px rgba(147,51,234,.45),inset 0 2px 0 rgba(255,255,255,.35);
-  text-shadow:0 2px 0 rgba(59,7,100,.6);transition:transform .12s ease,box-shadow .12s ease,filter .2s}
-.play svg{width:22px;height:22px;fill:currentColor;filter:drop-shadow(0 2px 0 rgba(59,7,100,.6))}
-.play:hover{filter:brightness(1.1)}
-.play:active{transform:translateY(5px);box-shadow:0 1px 0 #4c1d95,0 4px 12px rgba(147,51,234,.4),inset 0 2px 0 rgba(255,255,255,.3)}
-.play:focus-visible,.thumb:focus-visible{outline:3px solid var(--a2);outline-offset:3px}
-.soon .thumb{display:grid;place-items:center;background:
-  radial-gradient(circle at 30% 30%,rgba(52,211,153,.35),transparent 55%),radial-gradient(circle at 75% 75%,rgba(34,211,238,.3),transparent 55%),#10172b}
-.soon .thumb svg{width:44%;max-width:150px;opacity:.9;animation:bob 3s ease-in-out infinite}
-@keyframes bob{50%{transform:translateY(-8px) rotate(-6deg)}}
-.soon .play{background:rgba(255,255,255,.07);color:var(--mut);box-shadow:inset 0 0 0 2px rgba(255,255,255,.14);text-shadow:none;cursor:default;font-size:20px}
-
-.ad-slot{margin:26px auto 0;max-width:728px;min-height:90px;border-radius:14px;border:1px dashed rgba(255,255,255,.14);
-  background:rgba(255,255,255,.025);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.22);
-  font-size:11px;letter-spacing:.2em;text-transform:uppercase}
-footer{text-align:center;color:rgba(183,176,216,.7);font-size:13px;margin-top:26px;padding-bottom:6px}
-footer b{color:#e9d5ff}
-
-.info{margin:34px auto 0;max-width:900px}
-.info>h2{font-family:var(--display);font-weight:400;font-size:clamp(28px,6vw,40px);text-align:center;margin-bottom:6px}
-.info>p.intro{color:var(--mut);text-align:center;max-width:60ch;margin:0 auto 18px}
-.ginfo{border-radius:18px;padding:16px 18px;margin-top:14px;background:rgba(255,255,255,.045);border:1px solid var(--line)}
-.ginfo h3{font-family:var(--display);font-weight:400;font-size:24px;letter-spacing:.01em}
-.ginfo p{color:#d6d0f0;font-size:15px;margin:6px 0}
-.ginfo .lnk{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;font-weight:700}
-.ginfo .lnk a{color:#c4b5fd;text-decoration:none}.ginfo .lnk a:hover{color:#67e8f9;text-decoration:underline}
-footer nav{display:flex;flex-wrap:wrap;justify-content:center;gap:4px 14px;margin-bottom:8px}
-footer nav a{color:#c4b5fd;text-decoration:none}footer nav a:hover{text-decoration:underline}
-@media (min-width:700px){.wrap{padding-top:48px}header{padding-bottom:36px}.games{gap:24px}}
-@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.card{opacity:1;transform:none}}
-</style>
+<meta name="twitter:title" content="injoffice - AI-First Office Suite">
+<meta name="twitter:description" content="Free, open-source office app with AI. Docs, spreadsheets, presentations, PDFs. Desktop + browser. Download now.">
+<meta name="robots" content="index, follow">
 </head>
-<body>
-<div class="bg" aria-hidden="true">
-  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
-  <canvas id="stars"></canvas>
-  <div class="grid-floor"></div>
-</div>
+<body style="margin:0; padding:0; background-color:#f4f6f9; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color:#2c3e50; line-height:1.7;">
 
-<main class="wrap">
-  <header>
-    <span class="badge"><i></i>Free · No downloads</span>
-    <h1>Games by Zaib</h1>
-    <p class="tag">Arcade games made for your phone. Tap a game and play instantly.</p>
-  </header>
+<div style="max-width:1000px; margin:0 auto; padding:40px 20px;">
 
-  <section class="games" id="games" aria-label="Games"></section>
+    <!-- Header Section -->
+    <div style="background:linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius:16px; padding:50px 40px; text-align:center; box-shadow:0 10px 30px rgba(0,0,0,0.15); margin-bottom:40px;">
+        <h1 style="color:#ffffff; font-size:3.2em; margin:0 0 10px 0; font-weight:800; letter-spacing:-1px;">⚡ injoffice - AI-Powered Office Suite for Everyone</h1>
+        <p style="color:#e8eaf6; font-size:1.3em; margin:0 0 30px 0; opacity:0.95;">Free, open-source, and works on desktop &amp; browser</p>
+        <a href="https://github.com/sackthavy/injoffice/releases" style="display:inline-block; background-color:#ffd166; color:#2c3e50; padding:18px 45px; border-radius:50px; font-size:1.3em; font-weight:700; text-decoration:none; box-shadow:0 5px 15px rgba(0,0,0,0.2); transition: all 0.3s ease; border:2px solid #ffffff;">⬇️ Download injoffice Now</a>
+    </div>
 
-  <!-- Ad banner slot: intentionally empty. Drop an ad unit inside #ad-slot later. -->
-  <aside class="ad-slot" id="ad-slot" aria-hidden="true"></aside>
+    <!-- What is injoffice Section -->
+    <div style="background-color:#ffffff; border-radius:12px; padding:40px; margin-bottom:30px; box-shadow:0 4px 12px rgba(0,0,0,0.08);">
+        <h2 style="color:#2c3e50; font-size:2em; border-bottom:3px solid #667eea; padding-bottom:10px; margin-top:0;">📝 What is injoffice?</h2>
+        <p style="font-size:1.1em; margin-bottom:20px;">injoffice is a complete, modern office suite designed for everyone — no technical skills required. Whether you need to write a letter, analyze numbers, create a slideshow, or edit a PDF, injoffice has you covered with a friendly interface and smart AI assistance built right in.</p>
+        <p style="font-size:1.1em; margin-bottom:20px;">Think of it as your all-in-one workplace: a word processor, a spreadsheet program, a presentation maker, and a PDF editor — all in one app. It's completely free, works offline, and respects your privacy. Your documents stay on your computer unless you choose to share them.</p>
+    </div>
 
-  <section class="info" aria-labelledby="info-h">
-    <h2 id="info-h">About the games</h2>
-    <p class="intro">Every game here is original, free and runs right in your browser on phones, tablets and computers. No downloads, no sign-up. Your progress is saved on your device.</p>
-  <article class="ginfo" id="moto-mayhem-info">
-    <h3>Moto Mayhem</h3>
-    <p>Moto Mayhem is a road-rash style motorbike racing game for phones and desktop browsers. Every race puts you on a winding highway against seven rival bikers, and the quickest way past them is often a well-timed punch or kick.</p>
-    <p><strong>How to play:</strong> Throttle is automatic. Steer to stay on the road and dodge traffic and roadside objects. Ride alongside a rival and attack toward their side. Kicks reach further and hit harder but are slower than punches.</p>
-    <p class="lnk"><a href="/moto-mayhem/">▶ Play Moto Mayhem</a><a href="/games/moto-mayhem/">How to play, controls &amp; features →</a></p>
-  </article>
-  <article class="ginfo" id="sky-glide-info">
-    <h3>Sky Glide</h3>
-    <p>Sky Glide is a one-touch flying game with a sketchbook look. You pilot a paper plane: hold to lift, release to glide, and thread your way past pencils, birds, cranes, storm clouds and even black holes.</p>
-    <p><strong>How to play:</strong> Hold anywhere on the screen to lift the plane; release to glide down. Avoid obstacles. Passing close to one without touching it gives a near-miss bonus, and near misses in a row build a combo multiplier up to x8.</p>
-    <p class="lnk"><a href="/sky-glide/">▶ Play Sky Glide</a><a href="/games/sky-glide/">How to play, controls &amp; features →</a></p>
-  </article>
-  <article class="ginfo" id="horde-breaker-info">
-    <h3>Horde Breaker</h3>
-    <p>Horde Breaker is a twin-stick style zombie shooter built for touch screens. Auto-fire is on by default: you focus on moving and dodging while your gun locks onto the most dangerous zombie.</p>
-    <p><strong>How to play:</strong> Move with the left joystick (or WASD). Your weapon aims and fires automatically. Keep moving. Brutes telegraph a charge, spitters fire acid, bloaters explode and crawlers lunge.</p>
-    <p class="lnk"><a href="/horde-breaker/">▶ Play Horde Breaker</a><a href="/games/horde-breaker/">How to play, controls &amp; features →</a></p>
-  </article>
-  <article class="ginfo" id="goal-frenzy-info">
-    <h3>Goal Frenzy</h3>
-    <p>Goal Frenzy is an arcade football game with a 3D-perspective stadium, curling shots and over-the-top power shots. Matches are short and fast, and they play well with a thumb on a phone or on a keyboard.</p>
-    <p><strong>How to play:</strong> Move with the floating joystick on the left side of the screen. Tap SHOOT to shoot; hold it for more power and swipe across the button to curl the ball.</p>
-    <p class="lnk"><a href="/goal-frenzy/">▶ Play Goal Frenzy</a><a href="/games/goal-frenzy/">How to play, controls &amp; features →</a></p>
-  </article>
-  <article class="ginfo" id="shuttle-smash-info">
-    <h3>Shuttle Smash</h3>
-    <p>Shuttle Smash is a badminton game for phones with a portrait 3D-perspective court and realistic shuttlecock physics, including drag and tumbling feathers. Your player moves to the shuttle automatically, so you only need to think about where and how hard to hit.</p>
-    <p><strong>How to play:</strong> Swipe to hit: the swipe direction sets your aim and its length and speed set the power. A short swipe plays a drop or net shot, a long swipe plays a clear or lob, and a long swipe on a high shuttle is a jump smash. Tap for an automatic shot.</p>
-    <p class="lnk"><a href="/shuttle-smash/">▶ Play Shuttle Smash</a><a href="/games/shuttle-smash/">How to play, controls &amp; features →</a></p>
-  </article>
-  <article class="ginfo" id="kedimz-adventure-info">
-    <h3>Kedimz Adventure</h3>
-    <p>Kedimz Adventure is a mobile-first side-scrolling platformer. Kedimz the cat sets out to bring back the Golden Bells across five worlds of four levels each, and every world ends with a boss fight.</p>
-    <p><strong>How to play:</strong> Move left and right. Keep holding a direction and Kedimz speeds up into a run. Press JUMP to jump; hold it for a higher jump. Stomp on enemies or swipe them with your paw.</p>
-    <p class="lnk"><a href="/kedimz-adventure/">▶ Play Kedimz Adventure</a><a href="/games/kedimz-adventure/">How to play, controls &amp; features →</a></p>
-  </article>
-  </section>
+    <!-- Why Choose Section -->
+    <div style="background-color:#ffffff; border-radius:12px; padding:40px; margin-bottom:30px; box-shadow:0 4px 12px rgba(0,0,0,0.08);">
+        <h2 style="color:#2c3e50; font-size:2em; border-bottom:3px solid #667eea; padding-bottom:10px; margin-top:0;">✨ Why You'll Love injoffice</h2>
+        <div style="display:flex; flex-wrap:wrap; gap:20px; margin-top:20px;">
+            <div style="flex:1; min-width:250px; background:#f8f9fa; border-radius:10px; padding:25px; text-align:center;">
+                <div style="font-size:2.5em; margin-bottom:10px;">🤖</div>
+                <h3 style="margin:10px 0; color:#2c3e50;">Built-in AI Assistant</h3>
+                <p style="margin:0; color:#555;">Get writing suggestions, auto-format spreadsheets, generate presentation ideas, and summarize PDFs instantly.</p>
+            </div>
+            <div style="flex:1; min-width:250px; background:#f8f9fa; border-radius:10px; padding:25px; text-align:center;">
+                <div style="font-size:2.5em; margin-bottom:10px;">💻</div>
+                <h3 style="margin:10px 0; color:#2c3e50;">Works Everywhere</h3>
+                <p style="margin:0; color:#555;">Use it on your Windows desktop or directly in your web browser. Your files work seamlessly in both.</p>
+            </div>
+            <div style="flex:1; min-width:250px; background:#f8f9fa; border-radius:10px; padding:25px; text-align:center;">
+                <div style="font-size:2.5em; margin-bottom:10px;">🔓</div>
+                <h3 style="margin:10px 0; color:#2c3e50;">100% Free & Open</h3>
+                <p style="margin:0; color:#555;">No subscriptions, no hidden fees. injoffice is open-source, meaning it's free forever and constantly improved by a global community.</p>
+            </div>
+            <div style="flex:1; min-width:250px; background:#f8f9fa; border-radius:10px; padding:25px; text-align:center;">
+                <div style="font-size:2.5em; margin-bottom:10px;">📁</div>
+                <h3 style="margin:10px 0; color:#2c3e50;">Full File Compatibility</h3>
+                <p style="margin:0; color:#555;">Open and save Word (.docx), Excel (.xlsx), PowerPoint (.pptx), and PDF files effortlessly. No more compatibility headaches.</p>
+            </div>
+            <div style="flex:1; min-width:250px; background:#f8f9fa; border-radius:10px; padding:25px; text-align:center;">
+                <div style="font-size:2.5em; margin-bottom:10px;">🔒</div>
+                <h3 style="margin:10px 0; color:#2c3e50;">Privacy-First & Offline</h3>
+                <p style="margin:0; color:#555;">Your documents are stored locally on your computer. Work without internet — your data stays yours.</p>
+            </div>
+            <div style="flex:1; min-width:250px; background:#f8f9fa; border-radius:10px; padding:25px; text-align:center;">
+                <div style="font-size:2.5em; margin-bottom:10px;">🖥️</div>
+                <h3 style="margin:10px 0; color:#2c3e50;">Lightning Fast</h3>
+                <p style="margin:0; color:#555;">Optimized for speed and low resource usage. Even older computers run injoffice smoothly.</p>
+            </div>
+        </div>
+    </div>
 
-  <footer><nav aria-label="Site"><a href="/games/">Game guides</a><a href="/about/">About</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy Policy</a><a href="/terms/">Terms of Use</a></nav>Made with ♥ by <b>Jahan Zaib</b> · <span id="yr"></span></footer>
-</main>
+    <!-- Download Section -->
+    <div style="background-color:#ffffff; border-radius:12px; padding:40px; margin-bottom:30px; box-shadow:0 4px 12px rgba(0,0,0,0.08);">
+        <h2 style="color:#2c3e50; font-size:2em; border-bottom:3px solid #667eea; padding-bottom:10px; margin-top:0;">🚀 Get Started in Minutes</h2>
+        <p style="font-size:1.2em; margin-bottom:30px;">Ready to boost your productivity with AI? Follow this simple step-by-step guide to get injoffice on your Windows computer:</p>
+        
+        <div style="background:#f8f9fa; border-radius:10px; padding:30px; margin-bottom:30px; text-align:center; border:2px dashed #667eea;">
+            <h3 style="margin-top:0; color:#2c3e50; font-size:1.6em;">Step 1: Download the Application</h3>
+            <p style="font-size:1.15em; margin-bottom:25px;">Visit this link to download the application. The download page will show you the latest version.</p>
+            <a href="https://github.com/sackthavy/injoffice/releases" style="display:inline-block; background-color:#667eea; color:#ffffff; padding:16px 40px; border-radius:50px; font-size:1.2em; font-weight:600; text-decoration:none; box-shadow:0 4px 12px rgba(102,126,234,0.4); transition: all 0.3s ease;">📥 Go to Download Page</a>
+            <p style="font-size:0.9em; color:#888; margin-top:15px;">The download will start automatically. If not, look for the file in your Downloads folder.</p>
+        </div>
+        
+        <div style="background:#f8f9fa; border-radius:10px; padding:30px; margin-bottom:30px;">
+            <h3 style="margin-top:0; color:#2c3e50; font-size:1.6em;">Step 2: Run the Installer</h3>
+            <p style="font-size:1.1em; margin-bottom:15px;">Once the download is complete, find the file you just downloaded (usually in your "Downloads" folder) and double-click on it to run the installer. Follow the simple on-screen instructions — it's just a few clicks!</p>
+        </div>
+        
+        <div style="background:#f8f9fa; border-radius:10px; padding:30px; margin-bottom:30px;">
+            <h3 style="margin-top:0; color:#2c3e50; font-size:1.6em;">Step 3: Launch injoffice</h3>
+            <p style="font-size:1.1em; margin-bottom:15px;">After installation, you'll find injoffice in your Start Menu or on your desktop. Double-click the icon to open it, and you're ready to create amazing documents!</p>
+        </div>
+        
+        <div style="background:#e8f5e9; border-radius:10px; padding:25px; text-align:center;">
+            <p style="font-size:1.2em; margin:0; font-weight:600;">💡 <span style="color:#2e7d32;">Tip:</span> You can also use injoffice directly in your web browser without installing anything. Just open the website and start working!</p>
+        </div>
+    </div>
 
-<noscript><p style="text-align:center;color:#b7b0d8;padding:20px">
-  <a href="/moto-mayhem/">Moto Mayhem</a> · <a href="/sky-glide/">Sky Glide</a> · <a href="/horde-breaker/">Horde Breaker</a> · <a href="/goal-frenzy/">Goal Frenzy</a> · <a href="/shuttle-smash/">Shuttle Smash</a> · <a href="/kedimz-adventure/">Kedimz Adventure</a></p></noscript>
+    <!-- Features Section -->
+    <div style="background-color:#ffffff; border-radius:12px; padding:40px; margin-bottom:30px; box-shadow:0 4px 12px rgba(0,0,0,0.08);">
+        <h2 style="color:#2c3e50; font-size:2em; border-bottom:3px solid #667eea; padding-bottom:10px; margin-top:0;">📊 What Can You Do with injoffice?</h2>
+        <p style="font-size:1.1em; margin-bottom:20px;">injoffice replaces multiple expensive software programs with one free app. Here's what you can create:</p>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:20px;">
+            <div style="background:#e3f2fd; border-radius:10px; padding:25px;">
+                <h3 style="margin-top:0; color:#1565c0;">📄 Documents (Word-style)</h3>
+                <p>Write letters, reports, essays, newsletters, and more. The AI helps with grammar, style, and rewriting. Import existing .docx files easily.</p>
+            </div>
+            <div style="background:#e8f5e9; border-radius:10px; padding:25px;">
+                <h3 style="margin-top:0; color:#2e7d32;">📊 Spreadsheets (Excel-style)</h3>
+                <p>Create budgets, track expenses, manage lists, or analyze data. Use formulas, charts, and let AI suggest insights or even write formulas for you.</p>
+            </div>
+            <div style="background:#fff3e0; border-radius:10px; padding:25px;">
+                <h3 style="margin-top:0; color:#e65100;">📽️ Presentations (PowerPoint-style)</h3>
+                <p>Design beautiful slideshows for school, work, or personal projects. AI can generate slide outlines and design themes for you.</p>
+            </div>
+            <div style="background:#fce4ec; border-radius:10px; padding:25px;">
+                <h3 style="margin-top:0; color:#c62828;">📕 PDF Editing</h3>
+                <p>View, annotate, highlight, and edit PDF files. Add text boxes, signatures, or fill out forms. Even merge or split PDFs.</p>
+            </div>
+        </div>
+    </div>
 
-<script>
-/* ============================================================
-   ADD NEW GAMES HERE.
-   Each entry: name, desc (one line), genre, url, img (under img/),
-   color (genre tag colour). Omit url to show a "Coming soon" card.
-   ============================================================ */
-const GAMES = [
-  { name: "Moto Mayhem",   desc: "Motorbike combat racer — punch, kick and boost to first place.", genre: "Racing",   url: "/moto-mayhem/",   img: "img/moto-mayhem.webp",   color: "#f97316" },
-  { name: "Sky Glide",     desc: "Fly a paper plane over the city, dodge danger and grab coins.",  genre: "Casual",   url: "/sky-glide/",     img: "img/sky-glide.webp",     color: "#ec4899" },
-  { name: "Horde Breaker", desc: "Zombie survival shooter — outlast endless undead hordes.",       genre: "Shooter",  url: "/horde-breaker/", img: "img/horde-breaker.webp", color: "#ef4444" },
-  { name: "Goal Frenzy",   desc: "Fast arcade football — sprint, pass and power-shoot to win.",   genre: "Sports",   url: "/goal-frenzy/",   img: "img/goal-frenzy.webp",   color: "#22c55e" },
-  { name: "Shuttle Smash", desc: "3D badminton — swipe to smash, power shots, World Tour and 2-player mode.", genre: "Sports",   url: "/shuttle-smash/", img: "img/shuttle-smash.webp", color: "#0ea5e9" },
-  { name: "Kedimz Adventure", desc: "Cat platformer — 5 worlds, 20 levels, bosses, power-ups and a hat shop.", genre: "Platformer", url: "/kedimz-adventure/", img: "img/kedimz-adventure.webp", color: "#f59e0b" },
-];
+    <!-- System Requirements Section -->
+    <div style="background-color:#ffffff; border-radius:12px; padding:40px; margin-bottom:30px; box-shadow:0 4px 12px rgba(0,0,0,0.08);">
+        <h2 style="color:#2c3e50; font-size:2em; border-bottom:3px solid #667eea; padding-bottom:10px; margin-top:0;">🖥️ System Requirements</h2>
+        <p style="font-size:1.1em; margin-bottom:20px;">injoffice runs smoothly on almost any Windows computer:</p>
+        <ul style="font-size:1.1em; padding-left:20px; line-height:2;">
+            <li><strong>Operating System:</strong> Windows 10 or Windows 11 (also works on macOS and Linux)</li>
+            <li><strong>RAM:</strong> 4 GB or more recommended</li>
+            <li><strong>Storage:</strong> About 500 MB of free space</li>
+            <li><strong>Internet:</strong> Required only for AI features; the basic app works offline</li>
+        </ul>
+    </div>
 
-const PLAY_ICON = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15a1 1 0 0 0 1.53.85l12-7.5a1 1 0 0 0 0-1.7l-12-7.5A1 1 0 0 0 7 4.5z"/></svg>';
-const SHUTTLE = '<svg viewBox="0 0 100 100" aria-hidden="true"><g fill="none" stroke="#e0fdfa" stroke-width="4" stroke-linejoin="round"><path d="M50 62 22 14h56z" fill="rgba(255,255,255,.15)"/><path d="M50 62 36 14M50 62l14-48M50 62V14"/></g><circle cx="50" cy="74" r="14" fill="#34d399"/><path d="M36 70h28" stroke="#065f46" stroke-width="4"/></svg>';
-const esc = s => String(s).replace(/[&<>"']/g, c => ({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;" }[c]));
-
-document.getElementById("games").innerHTML = GAMES.map((g, i) => {
-  const soon = !g.url;
-  const thumb = soon
-    ? `<div class="thumb">${SHUTTLE}<span class="genre" style="--gc:${g.color}">${esc(g.genre)}</span></div>`
-    : `<a class="thumb" href="${esc(g.url)}" tabindex="-1" aria-hidden="true"><img src="${esc(g.img)}" alt="" width="600" height="375" loading="${i < 2 ? "eager" : "lazy"}" decoding="async"><span class="genre" style="--gc:${g.color}">${esc(g.genre)}</span></a>`;
-  const btn = soon
-    ? `<span class="play" aria-disabled="true">COMING SOON</span>`
-    : `<a class="play" href="${esc(g.url)}" aria-label="Play ${esc(g.name)}">${PLAY_ICON}PLAY</a>`;
-  return `<article class="card${soon ? " soon" : ""}" style="--i:${i}">${thumb}<div class="body"><h2 class="name">${esc(g.name)}</h2><p class="desc">${esc(g.desc)}</p>${btn}</div></article>`;
-}).join("");
-document.getElementById("yr").textContent = new Date().getFullYear();
-
-/* twinkling starfield */
-(() => {
-  const c = document.getElementById("stars"), x = c.getContext("2d");
-  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
-  let w, h, dpr, stars = [];
-  function size() {
-    dpr = Math.min(devicePixelRatio || 1, 2);
-    w = c.width = innerWidth * dpr; h = c.height = innerHeight * dpr;
-    const n = Math.round(Math.min(140, innerWidth * innerHeight / 7000));
-    stars = Array.from({ length: n }, () => ({ x: Math.random() * w, y: Math.random() * h, r: (Math.random() * 1.4 + .3) * dpr, s: Math.random() * .25 + .05, p: Math.random() * 6.28 }));
-  }
-  function frame(t) {
-    x.clearRect(0, 0, w, h);
-    for (const s of stars) {
-      s.y -= s.s * dpr; if (s.y < -4) { s.y = h + 4; s.x = Math.random() * w; }
-      x.globalAlpha = .35 + .65 * Math.abs(Math.sin(t / 900 + s.p));
-      x.fillStyle = "#e9e3ff"; x.beginPath(); x.arc(s.x, s.y, s.r, 0, 6.283); x.fill();
-    }
-    if (!reduce) requestAnimationFrame(frame);
-  }
-  addEventListener("resize", size); size(); requestAnimationFrame(frame);
-})();
-</script>
-</body>
-</html>
+    <!-- FAQ Section -->
+    <div style="background-color:#ffffff; border-radius:12px; padding:40px; margin-bottom:30px; box-shadow:0 4px 12px rgba(0,0,0,0.08);">
+        <h2 style="color:#2c3e50; font-size:2em; border-bottom:3px solid #667eea; padding-bottom:10px; margin-top:0;">❓ Frequently Asked Questions</h2>
+        <div style="margin-top:20px;">
+            <div style="margin-bottom:25px;">
+                <h3 style="color:#667eea; margin-bottom:8px;">Is injoffice really free?</h3>
+                <p style="margin:0; font-size:1.05em;">Yes! It is 100% free and open-source. No hidden costs, no premium tiers, no subscription fees. You can even contribute to its development if you're technically inclined.</p>
+            </div>
+            <div style="margin-bottom:25px;">
+                <h3 style="color:#667eea; margin-bottom:8px;">Will my existing Microsoft Office files work?</h3>
+                <p style="margin:0; font-size:1.05em;">Absolutely. injoffice is designed to open and save files in the standard formats: .docx, .xlsx, .pptx, and .pdf. You won't have any compatibility problems.</p>
+            </div>
+            <div style="margin-bottom:25px;">
+                <h3 style="color:#667eea; margin-bottom:8px;">What makes the AI special?</h3>
+                
